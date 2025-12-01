@@ -1,6 +1,7 @@
 <?php
 
-function solve($input, $debug = false): array {
+function solve($input, $debug = false): array
+{
 	$dial = 50;
 	$passwordOne = 0;
 	$passwordTwo = 0;
@@ -24,7 +25,7 @@ function solve($input, $debug = false): array {
 
 		if ($debug) {
 			if ($zeroTimes > 0) {
-				echo "The dial is rotated " . $line . " to point at " . $dial . "; during this rotation, it points at 0, " . $zeroTimes . " time(s)". PHP_EOL;
+				echo "The dial is rotated " . $line . " to point at " . $dial . "; during this rotation, it points at 0, " . $zeroTimes . " time(s)" . PHP_EOL;
 			} else {
 				echo "The dial is rotated " . $line . " to point at " . $dial . PHP_EOL;
 			}
@@ -34,7 +35,8 @@ function solve($input, $debug = false): array {
 	return [$passwordOne, $passwordTwo];
 }
 
-function newRot($cur, $dir, $dist): array {
+function newRot($cur, $dir, $dist): array
+{
 	$timesAtZero = 0;
 
 	while ($dist > 0) {
@@ -44,13 +46,14 @@ function newRot($cur, $dir, $dist): array {
 			$cur = 0;
 		}
 
+		if ($cur < 0) {
+			$cur = 99;
+		}
+
 		if ($cur === 0 && $dist > 1) {
 			$timesAtZero += 1;
 		}
 
-		if ($cur < 0) {
-			$cur = 99;
-		}
 
 		$dist -= 1;
 	}
