@@ -1,5 +1,5 @@
 <?php
-// Decently clean and elegant, didn't bother optimizing the outer foreach
+// Decently clean and elegant, didn't bother optimizing the outer for
 // I imagine we can skip quite a few checks for larger inputs
 // Part 1: ~600ms
 // Part 2: ~1500ms
