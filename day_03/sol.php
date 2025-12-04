@@ -4,7 +4,7 @@
 // Total: ~30ms
 
 /**
- * @return array{int, float}
+ * @return array{int, int, float}
  */
 function solve(string $input, bool $skipOne = false, bool $skipTwo = false): array
 {
